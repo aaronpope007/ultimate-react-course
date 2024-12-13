@@ -144,20 +144,20 @@ function getBook(id) {
 }
 
 // Destructuring objects and arrays
-const book = getBook(1)
+const book = getBook(1);
 
-const {title, author, pages, publicationDate, genres, hasMovieAdaptation} = book
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
 console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 
 console.log(genres);
 
-
-const [primaryGenre, secondaryGenre] = genres
+const [primaryGenre, secondaryGenre] = genres;
 
 console.log(primaryGenre, secondaryGenre);
 
 const myArray = [1, 2, 3, 4, 5];
-const [first, second, third, fourth ] = myArray;
+const [first, second, third, fourth] = myArray;
 console.log(first, second, third);
 
 // rest and spread operators
@@ -169,28 +169,33 @@ console.log(otherGenres);
 console.log(otherGenres[1]);
 
 function sum(...numbers) {
-  return numbers.reduce((total, num) => total + num, 0)
+  return numbers.reduce((total, num) => total + num, 0);
 }
 console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
-const newGenres = [...genres, 'Epic Popedpg'];
+const newGenres = [...genres, "Epic Popedpg"];
 console.log(newGenres);
 
 // spread operator in objects allows us to add new properties and change existing ones
-const updatedBook = {...book, moviePublicationDate: 2024-12-19, pages: 12}
-updatedBook
+const updatedBook = {
+  ...book,
+  moviePublicationDate: 2024 - 12 - 19,
+  pages: 12,
+};
+updatedBook;
 
-console.log(1+5)
+console.log(1 + 5);
 
 // template literals
-const summary = `${title } is a book and it is ${pages} long. IT was written by ${author} in ${publicationDate.split("-")[0]}. The book has ${hasMovieAdaptation ? '' : 'not'} been adapted as a movie.`
+const summary = `${title} is a book and it is ${pages} long. IT was written by ${author} in ${publicationDate.split("-")[0]}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 summary;
 
 // ternaries instead of if/else statements
 // we use this to define a variable conditionally (or make other conditional decusions)
-const overOneThousandPages = pages > 1000 ? 'over a thousand pages!' : 'less than 1000 pages';
+const overOneThousandPages =
+  pages > 1000 ? "over a thousand pages!" : "less than 1000 pages";
 overOneThousandPages;
 
-
-
-
+// arrow functions
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));

@@ -10,7 +10,7 @@ function ProtectedRoute({ children }) {
     function () {
       if (!isAuthenticated) navigate("/");
     },
-    [isAuthenticated, navigate]
+    [isAuthenticated, navigate],
   );
 
   return isAuthenticated ? children : null;

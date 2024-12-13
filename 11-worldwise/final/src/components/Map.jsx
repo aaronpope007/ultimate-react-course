@@ -29,7 +29,7 @@ function Map() {
     function () {
       if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
     },
-    [mapLat, mapLng]
+    [mapLat, mapLng],
   );
 
   useEffect(
@@ -37,7 +37,7 @@ function Map() {
       if (geolocationPosition)
         setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
     },
-    [geolocationPosition]
+    [geolocationPosition],
   );
 
   return (

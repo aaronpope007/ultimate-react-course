@@ -12,7 +12,7 @@ function Timer({ dispatch, secondsRemaining }) {
 
       return () => clearInterval(id);
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

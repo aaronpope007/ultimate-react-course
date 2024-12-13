@@ -15,7 +15,7 @@ function Timer() {
 
       return () => clearInterval(id);
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

@@ -1,5 +1,3 @@
 {
-    "recommendations": [
-        "wallabyjs.wallaby-extension-pack"
-    ]
+  "recommendations": ["wallabyjs.wallaby-extension-pack"]
 }

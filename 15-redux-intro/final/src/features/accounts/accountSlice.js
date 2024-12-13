@@ -53,7 +53,7 @@ export function deposit(amount, currency) {
     dispatch({ type: "account/convertingCurrency" });
 
     const res = await fetch(
-      `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
+      `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`,
     );
     const data = await res.json();
     const converted = data.rates.USD;
