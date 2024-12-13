@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring objects and arrays
-const book = getBook(1);
+const book = getBook(2);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -199,3 +199,28 @@ overOneThousandPages;
 // arrow functions
 const getYear = (str) => str.split("-")[0];
 console.log(getYear(publicationDate));
+
+// short circuiting and logical operators
+console.log(true && 'This is true!!');
+console.log(false && 'this is false. short circuited');
+console.log(hasMovieAdaptation && "this book has a movie");
+// falsy is: 0, '', null, undefined
+console.log('truthy' && 'truthy with string')
+console.log(0 && 'truthy with string');
+console.log(true || 'some string');
+console.log(false || 'seme string');
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || 'This book is not translated into Spanish';
+spanishTranslation
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || 'no data';
+countWrong
+
+//nullish coalescing operator only returns falsy when the value is null or undefined
+const count = book.reviews.librarything.reviewsCount ?? 'no data';
+count;
+
+
