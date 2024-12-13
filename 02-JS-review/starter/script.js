@@ -144,6 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring objects and arrays
+/*
 const book = getBook(3);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
@@ -233,5 +234,27 @@ function getTotalReviewCount(book) {
   return goodreads + librarything;
 }
 console.log(getTotalReviewCount(book))
+*/
+// The Array map array.map Method
+// map, filter and reduce are the 3 that don't mutate the array and are super useful
+const books = getBooks()
 
-// The Array map Method
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+const x = [1, 2, 3, 4, 5].map(el => el * 9) 
+console.log(x);
+// create an array that contains all of the titles of the books
+const titles = books.map(book => book.title)
+console.log(titles)
+
+
+const essentialData = books.map(book => ({
+    title: book.title,
+    author: book.author,
+    reviewsCount: getTotalReviewCount(book),
+}))
+console.log(essentialData);
+
