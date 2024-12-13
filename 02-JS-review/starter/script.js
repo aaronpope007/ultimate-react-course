@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring objects and arrays
-const book = getBook(2)
+const book = getBook(1)
 
 const {title, author, pages, publicationDate, genres, hasMovieAdaptation} = book
 console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
@@ -159,3 +159,23 @@ console.log(primaryGenre, secondaryGenre);
 const myArray = [1, 2, 3, 4, 5];
 const [first, second, third, fourth ] = myArray;
 console.log(first, second, third);
+
+// rest and spread operators
+// rest element always goes on the en
+// The rest operator collects multiple elements and "packs" them into an array (or object). It is typically used in function arguments or when destructuring arrays/objects.
+const [thePrimaryGenre, theSecondaryGenre, ...otherGenres] = genres;
+console.log(thePrimaryGenre, theSecondaryGenre, otherGenres);
+console.log(otherGenres);
+console.log(otherGenres[1]);
+
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0)
+}
+console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+const newGenres = [...genres, 'Epic Popedpg'];
+console.log(newGenres);
+
+// spread operator in objects allows us to add new properties and change existing ones
+const updatedBook = {...book, moviePublicationDate: 2024-12-19, pages: 12}
+updatedBook
