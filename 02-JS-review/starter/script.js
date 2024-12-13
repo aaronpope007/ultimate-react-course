@@ -179,3 +179,9 @@ console.log(newGenres);
 // spread operator in objects allows us to add new properties and change existing ones
 const updatedBook = {...book, moviePublicationDate: 2024-12-19, pages: 12}
 updatedBook
+
+console.log(1+5)
+
+// template literals
+const summary = `${title } is a book and it is ${pages} long. IT was written by ${author} in ${publicationDate.split("-")[0]}`
+summary;
