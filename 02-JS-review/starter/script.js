@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring objects and arrays
-const book = getBook(2);
+const book = getBook(3);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -215,12 +215,23 @@ console.log(book.translations.spanish);
 const spanishTranslation = book.translations.spanish || 'This book is not translated into Spanish';
 spanishTranslation
 
-console.log(book.reviews.librarything.reviewsCount);
-const countWrong = book.reviews.librarything.reviewsCount || 'no data';
-countWrong
+// console.log(book.reviews.librarything.reviewsCount);
+// const countWrong = book.reviews.librarything.reviewsCount || 'no data';
+// countWrong
 
-//nullish coalescing operator only returns falsy when the value is null or undefined
-const count = book.reviews.librarything.reviewsCount ?? 'no data';
-count;
+// //nullish coalescing operator only returns falsy when the value is null or undefined
+// const count = book.reviews.librarything.reviewsCount ?? 'no data';
+// count;
 
+// optional chaining
+function getTotalReviewCount(book) {
+  console.log(book)
+  const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  librarything
 
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCount(book))
+
+// The Array map Method
