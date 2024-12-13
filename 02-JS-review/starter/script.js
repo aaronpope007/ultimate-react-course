@@ -183,5 +183,14 @@ updatedBook
 console.log(1+5)
 
 // template literals
-const summary = `${title } is a book and it is ${pages} long. IT was written by ${author} in ${publicationDate.split("-")[0]}`
+const summary = `${title } is a book and it is ${pages} long. IT was written by ${author} in ${publicationDate.split("-")[0]}. The book has ${hasMovieAdaptation ? '' : 'not'} been adapted as a movie.`
 summary;
+
+// ternaries instead of if/else statements
+// we use this to define a variable conditionally (or make other conditional decusions)
+const overOneThousandPages = pages > 1000 ? 'over a thousand pages!' : 'less than 1000 pages';
+overOneThousandPages;
+
+
+
+
