@@ -258,3 +258,9 @@ const essentialData = books.map(book => ({
 }))
 console.log(essentialData);
 
+// array filter method
+// make an array with only books > 500 pages
+const longBooks = books.filter(book => book.pages > 500).filter(book => book.hasMovieAdaptation)
+longBooks;
+
+
