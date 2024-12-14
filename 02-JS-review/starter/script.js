@@ -275,3 +275,15 @@ allTotalPagesWithMap
 
 const allPagesTotal = books.reduce((sumOfPages, book) => sumOfPages + book.pages, 0)
 allPagesTotal
+
+// array.sort method
+const z = [3, 9, 5, 2, 7, 4, 8, 6, 1, 0]
+//  it's good to use slice to have a copy of the array
+const sorted = z.slice().sort((a, b) => a - b)
+sorted
+z
+
+const sortedByPagesLongToShort = books.slice().sort((a, b) => a - b);
+const pagesSorted = sortedByPagesLongToShort.map((book) => book.title)
+pagesSorted
+
