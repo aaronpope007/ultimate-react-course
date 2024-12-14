@@ -269,3 +269,9 @@ newLongBooks;
 const adventureBooks = books.filter(books => books.genres.includes('adventure')).map(book => book.title)
 adventureBooks;
 
+// array.reduce() method
+const allTotalPagesWithMap = books.map(book => book.pages).reduce((totalPages, currentPages) => totalPages + currentPages, 0)
+allTotalPagesWithMap
+
+const allPagesTotal = books.reduce((sumOfPages, book) => sumOfPages + book.pages, 0)
+allPagesTotal
