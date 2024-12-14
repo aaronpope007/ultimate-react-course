@@ -286,4 +286,22 @@ z
 const sortedByPagesLongToShort = books.slice().sort((a, b) => a - b);
 const pagesSorted = sortedByPagesLongToShort.map((book) => book.title)
 pagesSorted
+//  working with immutable arrays
+// 1 add object to an array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: 'J. K. Rowling',
+};
+const booksAfterAdd = [...books, newBook]
+booksAfterAdd
 
+// 2 delete a book  from an array
+const booksAfterDelete = booksAfterAdd.filter(book => book.id !==3)
+booksAfterDelete
+
+// 3) update book object in the array
+const booksAfterUpdate = booksAfterDelete.map(book => book.id ===1 ? {...book, pages:1 } : book)
+booksAfterUpdate
+
+// Async JS promises
