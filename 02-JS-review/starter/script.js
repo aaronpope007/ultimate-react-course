@@ -263,4 +263,9 @@ console.log(essentialData);
 const longBooks = books.filter(book => book.pages > 500).filter(book => book.hasMovieAdaptation)
 longBooks;
 
+const newLongBooks = books.filter(book => book.pages > 500 && book.hasMovieAdaptation).map(book => book.title);
+newLongBooks;
+
+const adventureBooks = books.filter(books => books.genres.includes('adventure')).map(book => book.title)
+adventureBooks;
 
