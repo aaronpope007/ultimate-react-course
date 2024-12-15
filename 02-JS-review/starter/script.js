@@ -237,71 +237,92 @@ console.log(getTotalReviewCount(book))
 */
 // The Array map array.map Method
 // map, filter and reduce are the 3 that don't mutate the array and are super useful
-const books = getBooks()
+const books = getBooks();
 
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
   return goodreads + librarything;
 }
-const x = [1, 2, 3, 4, 5].map(el => el * 9) 
+const x = [1, 2, 3, 4, 5].map((el) => el * 9);
 console.log(x);
 // create an array that contains all of the titles of the books
-const titles = books.map(book => book.title)
-console.log(titles)
+const titles = books.map((book) => book.title);
+console.log(titles);
 
-
-const essentialData = books.map(book => ({
-    title: book.title,
-    author: book.author,
-    reviewsCount: getTotalReviewCount(book),
-}))
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
 console.log(essentialData);
 
 // array filter method
 // make an array with only books > 500 pages
-const longBooks = books.filter(book => book.pages > 500).filter(book => book.hasMovieAdaptation)
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
 longBooks;
 
-const newLongBooks = books.filter(book => book.pages > 500 && book.hasMovieAdaptation).map(book => book.title);
+const newLongBooks = books
+  .filter((book) => book.pages > 500 && book.hasMovieAdaptation)
+  .map((book) => book.title);
 newLongBooks;
 
-const adventureBooks = books.filter(books => books.genres.includes('adventure')).map(book => book.title)
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
 adventureBooks;
 
 // array.reduce() method
-const allTotalPagesWithMap = books.map(book => book.pages).reduce((totalPages, currentPages) => totalPages + currentPages, 0)
-allTotalPagesWithMap
+const allTotalPagesWithMap = books
+  .map((book) => book.pages)
+  .reduce((totalPages, currentPages) => totalPages + currentPages, 0);
+allTotalPagesWithMap;
 
-const allPagesTotal = books.reduce((sumOfPages, book) => sumOfPages + book.pages, 0)
-allPagesTotal
+const allPagesTotal = books.reduce(
+  (sumOfPages, book) => sumOfPages + book.pages,
+  0
+);
+allPagesTotal;
 
 // array.sort method
-const z = [3, 9, 5, 2, 7, 4, 8, 6, 1, 0]
+const z = [3, 9, 5, 2, 7, 4, 8, 6, 1, 0];
 //  it's good to use slice to have a copy of the array
-const sorted = z.slice().sort((a, b) => a - b)
-sorted
-z
+const sorted = z.slice().sort((a, b) => a - b);
+sorted;
+z;
 
 const sortedByPagesLongToShort = books.slice().sort((a, b) => a - b);
-const pagesSorted = sortedByPagesLongToShort.map((book) => book.title)
-pagesSorted
+const pagesSorted = sortedByPagesLongToShort.map((book) => book.title);
+pagesSorted;
 //  working with immutable arrays
 // 1 add object to an array
 const newBook = {
   id: 6,
   title: "Harry Potter and the Chamber of Secrets",
-  author: 'J. K. Rowling',
+  author: "J. K. Rowling",
 };
-const booksAfterAdd = [...books, newBook]
-booksAfterAdd
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
 
 // 2 delete a book  from an array
-const booksAfterDelete = booksAfterAdd.filter(book => book.id !==3)
-booksAfterDelete
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
 
 // 3) update book object in the array
-const booksAfterUpdate = booksAfterDelete.map(book => book.id ===1 ? {...book, pages:1 } : book)
-booksAfterUpdate
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1 } : book
+);
+booksAfterUpdate;
 
 // Async JS promises
+// fetch api
+
+fetch("https://jsonplaceholder.typicode.com/todos/")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");
+
+// asynch await
